@@ -1,0 +1,11 @@
+<h2>All Comments</h2>
+
+<ol>
+  <%@comments.each do |comment|%>
+  <li><%=comment.content%></li>
+  <%=link_to 'Go to comment', comment%>
+  <%=link_to 'Delete this comment', comment, {method: 'delete'}%>
+  <%=link_to 'Edit this comment', edit_comment_path(comment)%>
+  <%end%>
+</ol>
+<%=link_to 'New comment', new_comment_path%>
